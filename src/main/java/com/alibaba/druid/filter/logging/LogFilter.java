@@ -750,6 +750,7 @@ public abstract class LogFilter extends FilterEventAdapter implements LogFilterM
     @Override
     protected void statement_executeErrorAfter(StatementProxy statement, String sql, Throwable error) {
         if (this.isStatementLogErrorEnabled()) {
+
             statementLogError("{conn-" + statement.getConnectionProxy().getId() + ", " + stmtId(statement)
                               + "} execute error. " + sql, error);
         }
